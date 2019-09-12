@@ -32,7 +32,7 @@ ALTER TABLE users ADD INDEX (name);
 |password|string|null: false|   |
 |email|string|null: false|MUL|
 ### Association
-- has_many :groups
+- has_many :user_groups
 - has_many :messages
 - has_many :groups , through: :user_groups
 
@@ -41,7 +41,7 @@ ALTER TABLE users ADD INDEX (name);
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has_many :uses
+- has_many :uses_groups
 - has_many :masseges
 - has_many :users , through: :user_groups
 
@@ -49,7 +49,7 @@ ALTER TABLE users ADD INDEX (name);
 |Column|Type|Options|
 |------|----|-------|
 |text|string|    |
-|image|string|null: false|
+|image|string|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 - belongs_to :user
